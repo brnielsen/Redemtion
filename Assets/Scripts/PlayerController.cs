@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 
     private Transform _selection;
 
-
+    public LayerMask tableMask;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,14 +46,21 @@ public class PlayerController : MonoBehaviour
             {
                 selectionRenderer.material = highlightedMaterial;
                 _selection = selection;
+                if (Input.GetMouseButton(0))
+                {
+                    //pickup
+                    var positionRay = camera.ScreenPointToRay(Input.mousePosition);
+                    RaycastHit tableHit;
+                    if(Physics.Raycast(positionRay, out tableHit, tableMask))
+                    {
+                        selection.position = hit.point;
+
+                    }
+                }
             }
 
            
         }
-        if (Input.GetMouseButtonDown(0))
-        {
-            //pickup
 
-        }
     }
 }
