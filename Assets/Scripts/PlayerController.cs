@@ -9,7 +9,9 @@ public class PlayerController : MonoBehaviour
 
     public Camera camera;
 
-    public GameObject selectedObject;
+    public Transform selectedObject;
+
+    public Transform nullObjectCauseIcantTellUnityToNullATransform;
 
     public bool isHolding = false;
 
@@ -20,6 +22,11 @@ public class PlayerController : MonoBehaviour
     private Transform _selection;
 
     public LayerMask tableMask;
+
+    public float hoverAboveTable = 0.1f;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,27 +47,37 @@ public class PlayerController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
-            var selection = hit.transform;
-            var selectionRenderer = selection.GetComponent<Renderer>();            
-            if (selectionRenderer != null && selection.CompareTag("selectable"))
+            if (hit.transform.CompareTag("selectable"))
             {
-                selectionRenderer.material = highlightedMaterial;
-                _selection = selection;
-                if (Input.GetMouseButton(0))
+                selectedObject = hit.transform;
+                var selectionRenderer = selectedObject.GetComponent<Renderer>();
+                if (selectionRenderer != null)
                 {
-                    //pickup
-                    var positionRay = camera.ScreenPointToRay(Input.mousePosition);
-                    RaycastHit tableHit;
-                    if(Physics.Raycast(positionRay, out tableHit, tableMask))
+                    selectionRenderer.material = highlightedMaterial;
+                    _selection = selectedObject;
+                    if (Input.GetMouseButton(0))
                     {
-                        selection.position = hit.point;
-
+                        //pickup
+                        isHolding = true;
                     }
                 }
             }
 
-           
-        }
+            if(isHolding == true)
+            {
+                var positionRay = camera.ScreenPointToRay(Input.mousePosition);
+                RaycastHit tableHit;
+                if (Physics.Raycast(positionRay, out tableHit, Mathf.Infinity, tableMask))
+                {
+                    selectedObject.position = tableHit.point + new Vector3(0f, hoverAboveTable, 0f);
+                }
 
+                if (Input.GetMouseButtonUp(0))
+                {
+                    isHolding = false;
+                    
+                }
+            }
+        }
     }
 }
