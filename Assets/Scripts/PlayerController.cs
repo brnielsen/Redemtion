@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
 
     public bool isHolding = false;
 
+    public bool thrown = false;
+
     private float mousePosX, mousePosY;
 
     public Material highlightedMaterial;
@@ -55,7 +57,7 @@ public class PlayerController : MonoBehaviour
                 {
                     selectionRenderer.material = highlightedMaterial;
                     _selection = selectedObject;
-                    if (Input.GetMouseButton(0))
+                    if (Input.GetMouseButton(0) && thrown == false)
                     {
                         //pickup
                         isHolding = true;
@@ -71,12 +73,11 @@ public class PlayerController : MonoBehaviour
                 {
                     selectedObject.position = tableHit.point + new Vector3(0f, hoverAboveTable, 0f);
                 }
-
-                if (Input.GetMouseButtonUp(0))
-                {
-                    isHolding = false;
-                    
-                }
+            }
+            if (!Input.GetMouseButton(0))
+            {
+                isHolding = false;
+                thrown = false;
             }
         }
     }
