@@ -9,6 +9,7 @@ public class ThrowObject : MonoBehaviour
     public float throwForceMultiplier = 1000f;
     public float verticalForce = 1000f;
     private PlayerController playerController;
+    public GameObject locationHitPrefab;
 
     private void Awake()
     {
@@ -25,6 +26,8 @@ public class ThrowObject : MonoBehaviour
                 if (hit.transform.CompareTag("Table"))
                 {
                     startClick = hit.point;
+                    GameObject startIndicator = Instantiate(locationHitPrefab, hit.point, Quaternion.identity);
+                    Destroy(startIndicator, 3f);
                 }
             }
         }
@@ -38,6 +41,8 @@ public class ThrowObject : MonoBehaviour
                 if (hit.transform.CompareTag("Table"))
                 {
                     endClick = hit.point;
+                    GameObject endIndicator = Instantiate(locationHitPrefab, hit.point, Quaternion.identity);
+                    Destroy(endIndicator, 3f);
                 }
             }
             Vector3 direction = new Vector3((endClick.x - startClick.x) * -throwForceMultiplier, verticalForce, (endClick.z - startClick.z)*-throwForceMultiplier);
@@ -54,6 +59,6 @@ public class ThrowObject : MonoBehaviour
     {
         startClick = Vector3.zero;
         endClick = Vector3.zero;
-
+        
     }
 }

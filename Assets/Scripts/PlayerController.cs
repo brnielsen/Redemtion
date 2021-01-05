@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
 
     public Transform selectedObject;
 
+    public GameObject heldObject;
+
     public Transform nullObjectCauseIcantTellUnityToNullATransform;
 
     public bool isHolding = false;
@@ -47,7 +49,7 @@ public class PlayerController : MonoBehaviour
         }
         var ray = camera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit, 10f))
         {
             if (hit.transform.CompareTag("selectable"))
             {
@@ -57,10 +59,11 @@ public class PlayerController : MonoBehaviour
                 {
                     selectionRenderer.material = highlightedMaterial;
                     _selection = selectedObject;
-                    if (Input.GetMouseButton(0) && thrown == false)
+                    if (Input.GetMouseButton(0) && thrown == false && isHolding == false)
                     {
                         //pickup
                         isHolding = true;
+                        heldObject = selectedObject.gameObject;
                     }
                 }
             }
@@ -71,13 +74,14 @@ public class PlayerController : MonoBehaviour
                 RaycastHit tableHit;
                 if (Physics.Raycast(positionRay, out tableHit, Mathf.Infinity, tableMask))
                 {
-                    selectedObject.position = tableHit.point + new Vector3(0f, hoverAboveTable, 0f);
+                    heldObject.transform.position = tableHit.point + new Vector3(0f, hoverAboveTable, 0f);
                 }
             }
-            if (!Input.GetMouseButton(0))
+            if (Input.GetMouseButtonUp(0))
             {
                 isHolding = false;
                 thrown = false;
+                heldObject = null;
             }
         }
     }
