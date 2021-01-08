@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultMaterial: {fileID: 0}
+  returnableType: 4
 --- !u!64 &-486425462941245550
 MeshCollider:
   m_ObjectHideFlags: 0
