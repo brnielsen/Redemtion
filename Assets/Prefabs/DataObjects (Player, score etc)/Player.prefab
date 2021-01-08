@@ -47,14 +47,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 0}
   selectedObject: {fileID: 0}
+  heldObject: {fileID: 0}
   nullObjectCauseIcantTellUnityToNullATransform: {fileID: 0}
   isHolding: 0
   thrown: 0
   highlightedMaterial: {fileID: 2100000, guid: aa62e03727cceda4ca71b07e8a40837b, type: 2}
   tableMask:
     serializedVersion: 2
-    m_Bits: 0
-  hoverAboveTable: 0.1
+    m_Bits: 256
+  hoverAboveTable: 0.2
 --- !u!114 &6388795212082965064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,8 +70,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startClick: {x: 0, y: 0, z: 0}
   endClick: {x: 0, y: 0, z: 0}
-  throwForceMultiplier: 500
-  verticalForce: 1000
+  throwForceMultiplier: 1000
+  verticalForce: 300
+  locationHitPrefab: {fileID: 1831800896675093546, guid: 4104d0949f4eb234fa6412a2ad4f2a23,
+    type: 3}
 --- !u!64 &8465878393232620044
 MeshCollider:
   m_ObjectHideFlags: 0

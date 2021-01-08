@@ -75,13 +75,17 @@ public class PlayerController : MonoBehaviour
                 if (Physics.Raycast(positionRay, out tableHit, Mathf.Infinity, tableMask))
                 {
                     heldObject.transform.position = tableHit.point + new Vector3(0f, hoverAboveTable, 0f);
+                    heldObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+
                 }
             }
             if (Input.GetMouseButtonUp(0))
             {
                 isHolding = false;
                 thrown = false;
+                heldObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
                 heldObject = null;
+
             }
         }
     }

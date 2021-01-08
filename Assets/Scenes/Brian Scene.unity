@@ -4869,32 +4869,6 @@ PrefabInstance:
       propertyPath: nullObjectCauseIcantTellUnityToNullATransform
       value: 
       objectReference: {fileID: 1680030537}
-    - target: {fileID: 5631829546885577049, guid: 7f96b34bacff0e14a8a53e8736c94356,
-        type: 3}
-      propertyPath: tableMask.m_Bits
-      value: 256
-      objectReference: {fileID: 0}
-    - target: {fileID: 5631829546885577049, guid: 7f96b34bacff0e14a8a53e8736c94356,
-        type: 3}
-      propertyPath: hoverAboveTable
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6388795212082965064, guid: 7f96b34bacff0e14a8a53e8736c94356,
-        type: 3}
-      propertyPath: throwForceMultiplier
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 6388795212082965064, guid: 7f96b34bacff0e14a8a53e8736c94356,
-        type: 3}
-      propertyPath: verticalForce
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 6388795212082965064, guid: 7f96b34bacff0e14a8a53e8736c94356,
-        type: 3}
-      propertyPath: locationHitPrefab
-      value: 
-      objectReference: {fileID: 1831800896675093546, guid: 4104d0949f4eb234fa6412a2ad4f2a23,
-        type: 3}
     - target: {fileID: 8150803208711620879, guid: 7f96b34bacff0e14a8a53e8736c94356,
         type: 3}
       propertyPath: m_Name
