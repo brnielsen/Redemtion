@@ -1223,7 +1223,7 @@ BoxCollider:
   m_GameObject: {fileID: 730039006}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 4, y: -0.26, z: 0.09}
   m_Center: {x: 0, y: 0.15, z: 0.76}
@@ -3449,6 +3449,11 @@ PrefabInstance:
       propertyPath: nullObjectCauseIcantTellUnityToNullATransform
       value: 
       objectReference: {fileID: 1680030537}
+    - target: {fileID: 5631829546885577049, guid: 7f96b34bacff0e14a8a53e8736c94356,
+        type: 3}
+      propertyPath: hoverAboveTable
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 8150803208711620879, guid: 7f96b34bacff0e14a8a53e8736c94356,
         type: 3}
       propertyPath: m_Name

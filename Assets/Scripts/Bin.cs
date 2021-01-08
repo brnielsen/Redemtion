@@ -20,14 +20,12 @@ public class Bin : MonoBehaviour
         SelectableObject selectableObject = other.GetComponent<SelectableObject>();
         if(selectableObject.returnableType == returnableTypeAccepted)
         {
-            Debug.Log("Yay points!");
             score.currentScore += 1;
             Score.updateScore.Invoke();
             //Play afirmative sound
         }
         else
         {
-            Debug.Log("Don't put that in my mouth!");
             //Play negative sound
 
         }

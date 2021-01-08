@@ -23,7 +23,6 @@ public class SelectableObject : MonoBehaviour
     {
         if (other.CompareTag("Floor"))
         {
-            Debug.Log("Why you makin mess?");            
             audioSource.PlayOneShot(hitFloor);
         }
 
