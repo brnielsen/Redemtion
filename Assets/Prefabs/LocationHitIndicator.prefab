@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8833735182603241961}
   - component: {fileID: 2966239880116016311}
   - component: {fileID: 4891949375524408093}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: LocationHitIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
