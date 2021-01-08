@@ -8,20 +8,40 @@ public class SelectableObject : MonoBehaviour
 
     public ReturnableType returnableType;
 
+    public AudioClip hitFloor;
+    public AudioClip hitBin;
+    private AudioSource audioSource;
+
 
     private void Awake()
     {
         defaultMaterial = GetComponent<Renderer>().material;
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Floor"))
         {
-            Debug.Log("Why you makin mess?");
-            //Play sound based on type
+            Debug.Log("Why you makin mess?");            
+            audioSource.PlayOneShot(hitFloor);
+        }
+
+        if (other.gameObject.CompareTag("Bin"))
+        {
+            audioSource.PlayOneShot(hitBin);
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("Bin"))
+        {
+            audioSource.PlayOneShot(hitBin);
+
+        }
+    }
+
 
 }
 
