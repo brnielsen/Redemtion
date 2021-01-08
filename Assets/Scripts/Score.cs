@@ -12,11 +12,14 @@ public class Score : MonoBehaviour
 
     public bool levelEnd = false;
 
+    public delegate void UpdateScore();
+    public static UpdateScore updateScore;
     private void Awake()
     {
         potentialScore = FindObjectsOfType<SelectableObject>().Length;
         currentScore = 0;
         finalScore = 0;
+        updateScore.Invoke();
     }
 
     private void Update()

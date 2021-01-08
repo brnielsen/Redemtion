@@ -9,6 +9,7 @@ public class Bin : MonoBehaviour
 
     private Score score;
 
+
     private void Awake()
     {
         score = FindObjectOfType<Score>();
@@ -21,6 +22,7 @@ public class Bin : MonoBehaviour
         {
             Debug.Log("Yay points!");
             score.currentScore += 1;
+            Score.updateScore.Invoke();
             //Play afirmative sound
         }
         else
