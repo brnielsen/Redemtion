@@ -16,12 +16,17 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         objectSpawner = FindObjectOfType<ObjectSpawner>();
+        objectSpawner.SpawnObjects();
+
         countdownTimer = FindObjectOfType<Countdown>();
         player = FindObjectOfType<PlayerController>();
-        musicManager = FindObjectOfType<MusicManager>();
-        musicManager.ChangeSong(levelMusic);
 
-        objectSpawner.SpawnObjects();
+        musicManager = FindObjectOfType<MusicManager>();
+        if(musicManager != null)
+        {
+            musicManager.ChangeSong(levelMusic);
+        }
+
     }
 
     public bool EndLevel()
