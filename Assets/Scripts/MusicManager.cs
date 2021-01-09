@@ -15,7 +15,7 @@ public class MusicManager : MonoBehaviour
     public void ChangeSong(AudioClip audioClip)
     {
         audioSource.clip = audioClip;
-        
+        audioSource.Play();
     }
 
 }
