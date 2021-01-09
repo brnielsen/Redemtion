@@ -20,25 +20,35 @@ public class Countdown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeStart -= Time.deltaTime;
+        if(timeStart > 0f)
+        {
+            timeStart -= Time.deltaTime;
 
-        if (timeStart >= 60f)
-        {
-            minutes = (int)timeStart / 60;
+            if (timeStart >= 60f)
+            {
+                minutes = (int)timeStart / 60;
+            }
+            else
+            {
+                minutes = 0;
+            }
+            if (minutes > 0)
+            {
+                seconds = (int)timeStart - (minutes * 60f);
+            }
+            else
+            {
+                seconds = timeStart;
+            }
         }
         else
         {
-            minutes = 0;
+            timeStart = 0f;
         }
-        if(minutes > 0)
-        {
-            seconds = (int)timeStart - (minutes * 60f);
-        }
-        else
-        {
-            seconds = timeStart;
-        }
+
 
         textBox.text = minutes.ToString() + ":" +  Mathf.Round(seconds).ToString();
+
+
     }
 }

@@ -54,7 +54,7 @@ MonoBehaviour:
   highlightedMaterial: {fileID: 2100000, guid: aa62e03727cceda4ca71b07e8a40837b, type: 2}
   tableMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 288
   hoverAboveTable: 0.2
 --- !u!114 &6388795212082965064
 MonoBehaviour:
