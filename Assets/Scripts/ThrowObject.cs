@@ -16,6 +16,7 @@ public class ThrowObject : MonoBehaviour
     private void Awake()
     {
         playerController = FindObjectOfType<PlayerController>();
+        applyForce = false;
     }
     private void Update()
     {
@@ -38,6 +39,7 @@ public class ThrowObject : MonoBehaviour
         {
             applyForce = true;
         }
+
 
     }
 
