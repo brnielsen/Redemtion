@@ -11,6 +11,8 @@ public class ThrowObject : MonoBehaviour
     private PlayerController playerController;
     public GameObject locationHitPrefab;
 
+    bool applyForce = false;
+
     private void Awake()
     {
         playerController = FindObjectOfType<PlayerController>();
@@ -34,6 +36,15 @@ public class ThrowObject : MonoBehaviour
 
         if (playerController.isHolding == true && Input.GetMouseButtonUp(1))
         {
+            applyForce = true;
+        }
+
+    }
+
+    private void FixedUpdate()
+    {
+        if (applyForce)
+        {
             var ray = playerController.camera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, LayerMask.GetMask("Table")))
@@ -45,20 +56,26 @@ public class ThrowObject : MonoBehaviour
                     Destroy(endIndicator, 3f);
                 }
             }
-            Vector3 direction = new Vector3((endClick.x - startClick.x) * -throwForceMultiplier, verticalForce, (endClick.z - startClick.z)*-throwForceMultiplier);
+            float magnitude = Vector3.Distance(endClick, startClick);
+            Vector3 direction = (startClick - endClick).normalized;
+            Vector3 forceApplied = new Vector3(0f, verticalForce, direction.z * throwForceMultiplier);
+
             playerController.isHolding = false;
             playerController.thrown = true;
-            playerController.selectedObject.GetComponent<Rigidbody>().AddForce(direction);
+            playerController.heldObject.GetComponent<Rigidbody>().AddForce(forceApplied, ForceMode.Impulse);
             Debug.Log("Direction = " + direction);
+            Debug.Log("Magnitude is " + magnitude);
+
+            Debug.Log("Force Applied = " + forceApplied);
+
             Reset();
         }
-
     }
 
     private void Reset()
     {
         startClick = Vector3.zero;
         endClick = Vector3.zero;
-        
+        applyForce = false;
     }
 }
