@@ -1656,11 +1656,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "CREDITS\n\nAaron: Title Screen Music, In Game Music, Game/Menu Sounds,
-    Design Consultant\n\nBrian: Unity fella\n\nElizabeth: Title Screen Art, Poster
-    Art, Title Screen Buttons, Brand Art\n\nShane: Live Recorded Sound Effects, Sticky
-    note art, Level End Menu Buttons\n\nTroy: Bin Models, Table Model, Small and
-    Large Can Models, Glass and Plastic Bottle Models (really all the models).  \n"
+  m_Text: "CREDITS\n\nAaron Plasket: Title Screen Music, In Game Music, Game/Menu
+    Sounds, Design Consultant\n\nBrian Nielsen: Unity fella\n\nElizabeth Darragh:
+    Title Screen Art, Poster Art, Title Screen Buttons, Brand Art\n\nShane Oliver:
+    Live Recorded Sound Effects, Sticky note art, Level End Menu Buttons\n\nTroyKallis:
+    Bin Models, Table Model, Small and Large Can Models, Glass and Plastic Bottle
+    Models (really all the models).  \n"
 --- !u!222 &1528672463
 CanvasRenderer:
   m_ObjectHideFlags: 0
