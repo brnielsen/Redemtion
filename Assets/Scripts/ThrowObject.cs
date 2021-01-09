@@ -58,7 +58,7 @@ public class ThrowObject : MonoBehaviour
             }
             float magnitude = Vector3.Distance(endClick, startClick);
             Vector3 direction = (startClick - endClick).normalized;
-            Vector3 forceApplied = new Vector3(0f, verticalForce, direction.z * throwForceMultiplier);
+            Vector3 forceApplied = new Vector3(direction.x * throwForceMultiplier, verticalForce, direction.z * throwForceMultiplier);
 
             playerController.isHolding = false;
             playerController.thrown = true;
