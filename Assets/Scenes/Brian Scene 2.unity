@@ -1365,6 +1365,11 @@ PrefabInstance:
       propertyPath: returnableTypeAccepted
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3112226370948492954, guid: 70e265b3fe252a2418abbc7035f54f4b,
+        type: 3}
+      propertyPath: Priority
+      value: 39
+      objectReference: {fileID: 0}
     - target: {fileID: 6159569813973898765, guid: 70e265b3fe252a2418abbc7035f54f4b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

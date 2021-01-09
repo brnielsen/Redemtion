@@ -97,8 +97,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultMaterial: {fileID: 0}
   returnableType: 2
-  hitFloor: {fileID: 0}
-  hitBin: {fileID: 0}
+  hitFloor: {fileID: 8300000, guid: 16d9575f64b847f468c6205c9d8bafa6, type: 3}
+  hitBin: {fileID: 8300000, guid: 88bc3b76a65956a4992f5eb7662799cd, type: 3}
 --- !u!64 &-8085388152189669368
 MeshCollider:
   m_ObjectHideFlags: 0

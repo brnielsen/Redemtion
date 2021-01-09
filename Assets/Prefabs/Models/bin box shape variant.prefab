@@ -101,6 +101,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6736140746370715617, guid: 814f9bfd9f95dd3448b397fc61e0a350,
+        type: 3}
+      propertyPath: successSound
+      value: 
+      objectReference: {fileID: 8300000, guid: aa631e9e0d946074a9ecc2b92a5e6b81, type: 3}
+    - target: {fileID: 6736140746370715617, guid: 814f9bfd9f95dd3448b397fc61e0a350,
+        type: 3}
+      propertyPath: failSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 686bf8030ac9eda4aaf498f98308625b, type: 3}
     - target: {fileID: 9168460678236245609, guid: 814f9bfd9f95dd3448b397fc61e0a350,
         type: 3}
       propertyPath: m_LocalPosition.x
