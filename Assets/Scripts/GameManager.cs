@@ -9,12 +9,17 @@ public class GameManager : MonoBehaviour
     Countdown countdownTimer;
     PlayerController player;
 
+    public AudioClip levelMusic;
+    MusicManager musicManager;
+
     bool endOfLevel = false;
     void Awake()
     {
         objectSpawner = FindObjectOfType<ObjectSpawner>();
         countdownTimer = FindObjectOfType<Countdown>();
         player = FindObjectOfType<PlayerController>();
+        musicManager = FindObjectOfType<MusicManager>();
+        musicManager.ChangeSong(levelMusic);
 
         objectSpawner.SpawnObjects();
     }
