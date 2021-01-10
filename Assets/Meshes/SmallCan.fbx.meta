@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: No Name
-    second: {fileID: 2100000, guid: 632d542c4eabba14885731537658c082, type: 2}
+      name: returnableColorGradient_mat
+    second: {fileID: 2100000, guid: 114a6ad115cfab74497c562f115b2f41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: smallCanLabel_mat
+    second: {fileID: 2100000, guid: 5f3fa0d1996f7ed4fa0f0c9ff66514d0, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

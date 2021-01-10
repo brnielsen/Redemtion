@@ -9,6 +9,16 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: No Name
     second: {fileID: 2100000, guid: 751298ffecc79274aa106b98132e4729, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: beerBottleLabel_mat
+    second: {fileID: 2100000, guid: fd6bcd1cc20bcd4488b6a6652b5fdff7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: returnableColorGradient_mat
+    second: {fileID: 2100000, guid: 114a6ad115cfab74497c562f115b2f41, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: No Name
-    second: {fileID: 2100000, guid: 632d542c4eabba14885731537658c082, type: 2}
+      name: returnableColorGradient_mat
+    second: {fileID: 2100000, guid: 114a6ad115cfab74497c562f115b2f41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: waterBottleLabel_mat
+    second: {fileID: 2100000, guid: a89525e1ab23aa942ac84fb522d8b68f, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

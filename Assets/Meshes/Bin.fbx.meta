@@ -9,6 +9,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Material
     second: {fileID: 2100000, guid: d4abe3e4f17a0c04faa7145a83185a09, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: returnableColorGradient_mat
+    second: {fileID: 2100000, guid: 114a6ad115cfab74497c562f115b2f41, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
