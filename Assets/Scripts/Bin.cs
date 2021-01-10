@@ -8,11 +8,16 @@ public class Bin : MonoBehaviour
     public ReturnableType returnableTypeAccepted;
 
     private Score score;
+    public AudioClip successSound;
+    public AudioClip failSound;
+
+    AudioSource audioSource;
 
 
     private void Awake()
     {
         score = FindObjectOfType<Score>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -20,15 +25,15 @@ public class Bin : MonoBehaviour
         SelectableObject selectableObject = other.GetComponent<SelectableObject>();
         if(selectableObject.returnableType == returnableTypeAccepted)
         {
-            Debug.Log("Yay points!");
             score.currentScore += 1;
             Score.updateScore.Invoke();
-            //Play afirmative sound
+
+            audioSource.PlayOneShot(successSound);
         }
         else
         {
-            Debug.Log("Don't put that in my mouth!");
-            //Play negative sound
+            audioSource.PlayOneShot(failSound);
+
 
         }
 

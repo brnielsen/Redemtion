@@ -14,7 +14,7 @@ public class Score : MonoBehaviour
 
     public delegate void UpdateScore();
     public static UpdateScore updateScore;
-    private void Awake()
+    private void Start()
     {
         potentialScore = FindObjectsOfType<SelectableObject>().Length;
         currentScore = 0;

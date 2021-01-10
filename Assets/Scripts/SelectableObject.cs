@@ -13,6 +13,7 @@ public class SelectableObject : MonoBehaviour
     private AudioSource audioSource;
 
 
+
     private void Awake()
     {
         defaultMaterial = GetComponent<Renderer>().material;
@@ -23,8 +24,9 @@ public class SelectableObject : MonoBehaviour
     {
         if (other.CompareTag("Floor"))
         {
-            Debug.Log("Why you makin mess?");            
             audioSource.PlayOneShot(hitFloor);
+
+
         }
 
         if (other.gameObject.CompareTag("Bin"))
