@@ -64,13 +64,14 @@ public class ThrowObject : MonoBehaviour
 
             playerController.isHolding = false;
             playerController.thrown = true;
+            Reset();
+
             playerController.heldObject.GetComponent<Rigidbody>().AddForce(forceApplied, ForceMode.Impulse);
             Debug.Log("Direction = " + direction);
             Debug.Log("Magnitude is " + magnitude);
 
             Debug.Log("Force Applied = " + forceApplied);
 
-            Reset();
         }
     }
 
